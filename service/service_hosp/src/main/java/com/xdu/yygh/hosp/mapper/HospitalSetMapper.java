@@ -1,4 +1,8 @@
 package com.xdu.yygh.hosp.mapper;
 
-public interface HospitalSetMapper {
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.xdu.yygh.model.hosp.HospitalSet;
+
+public interface HospitalSetMapper extends BaseMapper<HospitalSet>{
+
 }
