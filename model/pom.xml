@@ -4,12 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>yygh_parent</artifactId>
-        <groupId>com.xdu</groupId>
+        <groupId>com.xdu.yygh</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>model</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>model</name>
+    <description>model</description>
+
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -26,6 +31,10 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <scope>provided </scope>
+        </dependency>
+        <dependency><!--自己家的-->
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>

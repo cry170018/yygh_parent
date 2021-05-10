@@ -6,14 +6,16 @@
 		<module>common</module>
 		<module>model</module>
 		<module>service</module>
-	</modules>
+        <module>service_client</module>
+        <module>service_gateway</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.xdu</groupId>
+	<groupId>com.xdu.yygh</groupId>
 	<artifactId>yygh_parent</artifactId>
 	<packaging>pom</packaging>
 	<version>0.0.1-SNAPSHOT</version>
