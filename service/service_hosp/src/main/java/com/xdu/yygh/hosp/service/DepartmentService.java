@@ -17,7 +17,8 @@ public interface DepartmentService {
 
     List<DepartmentVo> findDeptTree(String hoscode);
 
-    Object getDepName(String hoscode, String depcode);
+    String getDepName(String hoscode, String depcode);
 
 
+    Department getDepartment(String hoscode, String depcode);
 }

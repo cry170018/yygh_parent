@@ -7,6 +7,7 @@ import com.xdu.yygh.common.result.ResultCodeEnum;
 import com.xdu.yygh.hosp.mapper.HospitalSetMapper;
 import com.xdu.yygh.hosp.service.HospitalSetService;
 import com.xdu.yygh.model.hosp.HospitalSet;
+import com.xdu.yygh.vo.order.SignInfoVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,8 +38,22 @@ public class HospitalSetServiceImpl extends ServiceImpl<HospitalSetMapper, Hospi
         return hospitalSetMapper.selectOne(new QueryWrapper<HospitalSet>().eq("hoscode", hoscode));
     }
 
+    //获取医院签名信息
+    @Override
+    public SignInfoVo getSignInfoVo(String hoscode) {
+        QueryWrapper<HospitalSet> wrapper = new QueryWrapper<>();
+        wrapper.eq("hoscode",hoscode);
+        HospitalSet hospitalSet = baseMapper.selectOne(wrapper);
+        if(null == hospitalSet) {
+            throw new YyghException(ResultCodeEnum.HOSPITAL_OPEN);
+        }
+        SignInfoVo signInfoVo = new SignInfoVo();
+        signInfoVo.setApiUrl(hospitalSet.getApiUrl());
+        signInfoVo.setSignKey(hospitalSet.getSignKey());
+        return signInfoVo;
+    }
 
-//mapper会被mp自动注入
-//    @Autowired
-//    private HospitalSetMapper hospitalSetMapper;
+
+
+
 }

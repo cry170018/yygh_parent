@@ -11,6 +11,7 @@ import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
 import com.xdu.yygh.msm.service.MsmService;
 import com.xdu.yygh.msm.utils.ConstantPropertiesUtils;
+import com.xdu.yygh.vo.msm.MsmVo;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -61,4 +62,14 @@ public class MsmServiceImpl implements MsmService {
         }
         return false;
     }
+
+    @Override
+    public boolean send(MsmVo msmVo) {
+        if(!StringUtils.isEmpty(msmVo.getPhone())) {
+            String code = (String)msmVo.getParam().get("code");
+            return this.send(msmVo.getPhone(),code);
+        }
+        return false;
+    }
+
 }
