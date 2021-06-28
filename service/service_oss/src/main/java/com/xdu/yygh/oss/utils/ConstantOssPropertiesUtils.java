@@ -6,9 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ConstantOssPropertiesUtils implements InitializingBean {
-//    aliyun.oss.endpoint=https://oss-cn-beijing.aliyuncs.com
-//    aliyun.oss.accessKeyId=LTAI5tLoUhpeva7YTswP9XXc
-//    aliyun.oss.secret=kRsSSzAWmoW9tXmkbQEeQV1pMX5kqd
+
 
     @Value("${aliyun.oss.endpoint}")
     private String endpoint;
